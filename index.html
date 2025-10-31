@@ -61,21 +61,22 @@
         /* --- Sections --- */
         section { padding: 6rem 0; }
         h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; text-align: center; margin-bottom: 0.5rem; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.3; }
+        /* 【新增】h2下方的英文翻译 */
         h2 + .english-translation { text-align: center; margin-bottom: 3.5rem; margin-top: 0; font-size: 1rem; }
 
-        /* 英文翻译样式 */
+        /* 【新增】英文翻译样式 */
         .english-translation { display: block; font-size: 0.9em; color: var(--secondary-text-color); margin-top: 0.5rem; font-weight: 300; line-height: 1.6; }
         .english-inline { font-size: 0.85em; color: var(--secondary-text-color); margin-left: 0.3em; }
 
         /* Hero Section */
-        #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 140px; }
+        #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 140px; /* 【修改】增加顶部内边距 */ }
         .hero-grid { display: grid; grid-template-columns: 1fr; md:grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center; }
-        #hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.25rem; }
-        #hero h1 + .english-translation { margin-bottom: 1.5rem; font-size: 1.1em; }
-        #hero p { font-size: 1.1rem; color: var(--text-color); margin-bottom: 0.25rem; /* 移除了 max-width */ }
-        #hero p + .english-translation { margin-bottom: 2.5rem; color: var(--secondary-text-color); }
-        .hero-buttons { display: flex; gap: 1rem; }
-        .cta-button, .outline-button { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; text-align: center; white-space: nowrap; }
+        #hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.25rem; /* 【修改】 */ }
+        #hero h1 + .english-translation { margin-bottom: 1.5rem; font-size: 1.1em; } /* 【新增】 */
+        #hero p { font-size: 1.1rem; color: var(--text-color); margin-bottom: 0.25rem; /* 【修改】 */ }
+        #hero p + .english-translation { margin-bottom: 2.5rem; color: var(--secondary-text-color); } /* 【新增】 */
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; /* 【新增】允许按钮换行 */ }
+        .cta-button, .outline-button { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 50px; font-weight: 500; transition: all 0.3s ease; text-align: center; white-space: nowrap; /* 【新增】 */ }
         .cta-button { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 20px rgba(100, 100, 255, 0.2); border: none; }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(100, 100, 255, 0.3); }
         .outline-button { background: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); }
@@ -84,88 +85,87 @@
         /* About Section */
         .about-grid { display: grid; grid-template-columns: 1fr; md:grid-template-columns: auto 1fr; gap: 3rem; align-items: center; max-width: 900px; margin: 0 auto; }
         .profile-pic { width: 200px; height: 250px; border-radius: 12px; object-fit: cover; border: 4px solid var(--primary-color); justify-self: center; }
-        .about-content { display: flex; flex-direction: column; gap: 0.5rem; }
-        .about-content p { color: var(--text-color); }
-        .about-content p + .english-translation { margin-bottom: 1.5rem; color: var(--secondary-text-color); }
+        .about-content { display: flex; flex-direction: column; gap: 0.5rem; /* 【修改】 */ }
+        .about-content p { color: var(--text-color); } /* 【新增】 */
+        .about-content p + .english-translation { margin-bottom: 1.5rem; color: var(--secondary-text-color); } /* 【新增】 */
         .about-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
         .about-tags span { background-color: var(--surface-color); color: var(--primary-color); font-size: 0.8rem; padding: 0.25rem 0.75rem; border-radius: 1rem; border: 1px solid var(--border-color); white-space: nowrap; }
 
         /* Projects Section */
         .project-grid {
             display: grid;
-            /* 【已修改】移除了 grid-template-columns */
+            /* 【已修改】移除 grid-template-columns，变为单列 */
             gap: 3rem; /* 【优化】增加了垂直间距 */
             max-width: 800px; /* 【新增】限制最大宽度，使其居中 */
             margin: 0 auto; /* 【新增】使其居中 */
         }
-        .project-card { background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+        .project-card { background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; /* 【新增】 */ }
         .project-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
-        .project-card img { width: 100%; height: 250px; /* 【优化】稍微增加图片高度 */ object-fit: cover; flex-shrink: 0; }
-        .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .project-content h3 { font-size: 1.25rem; margin-bottom: 0.1rem; line-height: 1.3; }
-        .project-content h3 + .english-translation { margin-bottom: 0.75rem; font-size: 0.9em; }
-        .project-content p { color: var(--text-color); font-size: 0.9rem; margin-bottom: 0.1rem; flex-grow: 1; }
-        .project-content p + .english-translation { margin-bottom: 1.5rem; color: var(--secondary-text-color); }
-        .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-        .project-tags span { background-color: rgba(79, 138, 244, 0.1); color: var(--primary-color); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 1rem; white-space: nowrap; }
-        .project-links { margin-top: auto; }
+        .project-card img { width: 100%; height: 250px; /* 【优化】稍微增加图片高度 */ object-fit: cover; flex-shrink: 0; /* 【新增】 */ }
+        .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; /* 【新增】 */ }
+        .project-content h3 { font-size: 1.25rem; margin-bottom: 0.1rem; line-height: 1.3; /* 【修改】 */ }
+        .project-content h3 + .english-translation { margin-bottom: 0.75rem; font-size: 0.9em; } /* 【新增】 */
+        .project-content p { color: var(--text-color); font-size: 0.9rem; margin-bottom: 0.1rem; flex-grow: 1; /* 【修改】 */ }
+        .project-content p + .english-translation { margin-bottom: 1.5rem; color: var(--secondary-text-color); } /* 【新增】 */
+        .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; /* 【修改】 */ }
+        .project-tags span { background-color: rgba(79, 138, 244, 0.1); color: var(--primary-color); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 1rem; white-space: nowrap; /* 【新增】 */ }
+        .project-links { margin-top: auto; /* 【新增】 */ }
         .project-links a { color: var(--primary-color); text-decoration: none; font-weight: 500; margin-right: 1rem; vertical-align: middle; }
         .project-links a:hover { text-decoration: underline; }
 
-        /* Research Section (后面代码省略，与上个版本相同) */
-        .research-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+        /* Research Section */
+        .research-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; /* 【修改】 */ }
         .research-item { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; }
         .research-item:hover { border-color: var(--primary-color); }
-        .research-item h3 { font-size: 1.25rem; margin-bottom: 0.1rem; line-height: 1.3; }
-        .research-item h3 + .english-translation { margin-bottom: 0.75rem; font-size: 0.9em; }
-        .research-item .meta { color: var(--secondary-text-color); font-size: 0.8rem; margin-bottom: 0.1rem; }
-        .research-item .meta + .english-translation { margin-bottom: 1rem; }
-        .research-item p { font-size: 0.9rem; margin-bottom: 0.1rem; color: var(--text-color); }
-        .research-item p + .english-translation { margin-bottom: 0; color: var(--secondary-text-color); }
+        .research-item h3 { font-size: 1.25rem; margin-bottom: 0.1rem; line-height: 1.3; /* 【修改】 */ }
+        .research-item h3 + .english-translation { margin-bottom: 0.75rem; font-size: 0.9em; } /* 【新增】 */
+        .research-item .meta { color: var(--secondary-text-color); font-size: 0.8rem; margin-bottom: 0.1rem; /* 【修改】 */ }
+        .research-item .meta + .english-translation { margin-bottom: 1rem; } /* 【新增】 */
+        .research-item p { font-size: 0.9rem; margin-bottom: 0.1rem; color: var(--text-color); /* 【修改】 */ }
+        .research-item p + .english-translation { margin-bottom: 0; color: var(--secondary-text-color); } /* 【新增】 */
 
         /* Skills Section */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
         .skill-category { background-color: var(--surface-color); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease; }
         .skill-category:hover { transform: translateY(-5px); }
-        .skill-category h3 { font-size: 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-direction: column; text-align: center; line-height: 1.3; }
-        .skill-category h3 .english-translation { margin-top: 0.1rem; font-size: 0.8em; }
-        .skill-icon { width: 24px; height: 24px; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .skill-category h3 { font-size: 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-direction: column; text-align: center; line-height: 1.3; /* 【修改】 */ }
+        .skill-category h3 .english-translation { margin-top: 0.1rem; font-size: 0.8em; } /* 【新增】 */
+        .skill-icon { width: 24px; height: 24px; color: var(--primary-color); margin-bottom: 0.5rem; /* 【新增】 */ }
         .skill-item { margin-bottom: 1rem; text-align: left; }
-        .skill-item .skill-info { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.25rem; font-size: 0.9rem; }
-        .skill-item .skill-info span:last-child { color: var(--secondary-text-color); font-size: 0.85em; white-space: nowrap; }
-        .progress-bar { width: 100%; background-color: var(--border-color); border-radius: 1rem; height: 8px; overflow: hidden; }
+        .skill-item .skill-info { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.25rem; font-size: 0.9rem; /* 【新增】 */ }
+        .skill-item .skill-info span:last-child { color: var(--secondary-text-color); font-size: 0.85em; white-space: nowrap; /* 【新增】 */ }
+        .progress-bar { width: 100%; background-color: var(--border-color); border-radius: 1rem; height: 8px; overflow: hidden; /* 【新增】 */ }
         .progress { background: var(--primary-gradient); height: 100%; border-radius: 1rem; }
 
         /* Footer */
         footer { background: var(--surface-color); border-top: 1px solid var(--border-color); padding: 3rem 0; margin-top: 4rem; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
-        footer h4 { font-size: 1.1rem; margin-bottom: 0.25rem; line-height: 1.3; }
-        footer h4 + .english-translation { margin-bottom: 1rem; }
-        footer p { color: var(--text-color); }
-        footer p.english-translation { margin-top: 0.25rem; color: var(--secondary-text-color); }
-        footer a { color: var(--secondary-text-color); text-decoration: none; display: block; margin-bottom: 0.25rem; transition: color 0.3s ease; }
-        footer a .english-inline { font-size: 0.9em; }
+        footer h4 { font-size: 1.1rem; margin-bottom: 0.25rem; line-height: 1.3; /* 【修改】 */ }
+        footer h4 + .english-translation { margin-bottom: 1rem; } /* 【新增】 */
+        footer p { color: var(--text-color); } /* 【新增】 */
+        footer p.english-translation { margin-top: 0.25rem; color: var(--secondary-text-color); } /* 【新增】 */
+        footer a { color: var(--secondary-text-color); text-decoration: none; display: block; margin-bottom: 0.25rem; transition: color 0.3s ease; /* 【修改】 */ }
+        footer a .english-inline { font-size: 0.9em; } /* 【新增】 */
         footer a:hover { color: var(--primary-color); }
-        .footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.9rem; color: var(--secondary-text-color); line-height: 1.5; }
+        .footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.9rem; color: var(--secondary-text-color); line-height: 1.5; /* 【新增】 */ }
 
         /* 移动端样式 */
         @media (max-width: 1024px) { .side-decorator { display: none; } }
         @media (max-width: 768px) {
             nav .nav-links { display: none; }
-            #hero { padding-top: 100px; }
+            #hero { padding-top: 100px; /* 【新增】 */ }
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
             #hero p { margin-left: auto; margin-right: auto; }
-            .hero-buttons { justify-content: center; flex-wrap: wrap; }
+            .hero-buttons { justify-content: center; flex-wrap: wrap; /* 【新增】 */ }
             .about-grid { grid-template-columns: 1fr; text-align: center; }
-            .project-grid { grid-template-columns: 1fr; max-width: none; /* 移动端不需要最大宽度限制 */ }
-            .skills-grid { grid-template-columns: 1fr; }
-            .footer-grid { text-align: center; }
+            .project-grid { grid-template-columns: 1fr; max-width: none; /* 【新增】 */ }
+            .skills-grid { grid-template-columns: 1fr; /* 【新增】 */ }
+            .footer-grid { text-align: center; /* 【新增】 */ }
         }
     </style>
 </head>
 <body>
 
-    <!-- HTML结构省略，与上个版本相同 -->
     <div class="shapes"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div> </div>
     <div class="side-decorator left"></div>
     <div class="side-decorator right"></div>
@@ -186,6 +186,7 @@
 
     <main>
         <div class="container">
+            <!-- Hero Section -->
             <section id="hero">
                 <div class="hero-grid">
                     <div>
@@ -193,9 +194,11 @@
                         <p class="english-translation">Zuo Yuhong | Full-Stack Developer | AI Practitioner</p>
                         <p>我是信息管理与信息系统专业的学生，对将复杂的技术落地为可用的产品充满热情。我具备从后端（Node.js, Spring Boot）到前端（HTML, JavaScript）的全栈开发能力，并成功在个人电脑上独立部署了大模型，构建了一个完整的AI图像分析应用。我享受解决从硬件驱动到代码Bug的全链路挑战，并致力于探索AI技术如何重塑未来的信息传播方式。</p>
                         <p class="english-translation">I am a student majoring in Information Management and Information Systems, passionate about translating complex technologies into usable products. I possess full-stack development capabilities, from backend (Node.js, Spring Boot) to frontend (HTML, JavaScript), and have successfully deployed large models independently on my personal computer to build a complete AI image analysis application. I enjoy tackling end-to-end challenges, from hardware drivers to code bugs, and am dedicated to exploring how AI technology can reshape the future of information dissemination.</p>
+
                         <div class="hero-buttons">
                             <a href="#projects" class="cta-button">查看项目<span class="english-inline">(View Projects)</span></a>
-                            <a href="左宇宏简历 Zuo Yuhong's resume.pdf" target="_blank" class="outline-button">下载简历<span class="english-inline">(Download CV)</span></a>
+                            <a href="左宇宏简历 Zuo Yuhong's resume.pdf" target="_blank" class="outline-button">下载中文简历</a>
+                            <a href="Resume-Yuhong Zuo.pdf" target="_blank" class="outline-button">Download English CV</a>
                         </div>
                     </div>
                     <img src="images/life.jpg"
@@ -204,6 +207,7 @@
                 </div>
             </section>
 
+            <!-- About Section -->
             <section id="about">
                 <h2>关于我</h2>
                 <p class="english-translation">About Me</p>
@@ -227,6 +231,7 @@
                 </div>
             </section>
 
+            <!-- Projects Section -->
             <section id="projects">
                 <h2>技术项目</h2>
                 <p class="english-translation">Technical Projects</p>
@@ -285,6 +290,7 @@
                 </div>
             </section>
 
+            <!-- Research Section -->
             <section id="research">
                 <h2>研究与报告</h2>
                 <p class="english-translation">Research & Reports</p>
@@ -324,6 +330,7 @@
                 </div>
             </section>
 
+            <!-- Skills Section -->
             <section id="skills">
                 <h2>技能栈</h2>
                 <p class="english-translation">Skill Stack</p>
@@ -455,9 +462,10 @@
             document.getElementById('footer-year').textContent = currentYear;
             const chineseFooter = document.querySelector('.footer-bottom p:not(.english-translation)');
             if (chineseFooter) {
-                 chineseFooter.innerHTML = `&copy; ${currentYear} 左宇宏. All Rights Reserved.`;
+                 chineseFooter.innerHTML = `&copy; ${currentYear} 左宇宏. All RightsReserved.`;
             }
         });
     </script>
 </body>
 </html>
+
